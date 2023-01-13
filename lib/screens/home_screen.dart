@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+// al hacer un StatelessWidget no podemos colorear en pantalla los nuevos valores ya que es un estado que no se modifica, por lo que vamos a dejar esto como muestra ya que los datos si los obtenemos por consola y vamos a seguir con un nuevo archivo llamado counter_screen.dart
+
 class HomeScreen extends StatelessWidget{
   const HomeScreen({super.key});
 
@@ -9,6 +11,8 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
 
     const fontSize30 = TextStyle(fontSize: 30);
+
+    int counter = 0;
 
     return Scaffold(
       appBar: AppBar(
@@ -24,17 +28,19 @@ class HomeScreen extends StatelessWidget{
           // crossAxisAlignment sirve para alinear horizontalmente pero dentro teniendo en cuenta únicamente el tamaño de los hijos
           crossAxisAlignment: CrossAxisAlignment.center,
 
-          // <Widget> nos obliga a que dentro sólo pueda haber widgets, podríamos dejarlo únicamente con const
-          children: const <Widget>[
-          Text('Número de clicks:', style: fontSize30),
-          Text('0', style: fontSize30)
+          // <Widget> nos obliga a que dentro sólo pueda haber widgets
+          children: <Widget>[
+          const Text('Número de clicks:', style: fontSize30),
+          Text('$counter', style: fontSize30)
         ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          print ('Hola mundo');
+          counter++;
+          print ('Hola mundo: $counter');
         }
       ),
     );

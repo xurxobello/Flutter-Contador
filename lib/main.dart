@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:contador/screens/home_screen.dart';
+import 'package:contador/screens/counter_screen.dart';
+// import 'package:contador/screens/home_screen.dart';
 
 // creamos una función main a la que llamar
 void main(){
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       // con el siguiente debub quitamos la misma palabra de la app en la esquina superior derecha
       debugShowCheckedModeBanner: false,
-      home: HomeScreen()
+      // home: HomeScreen()
+      home: CounterScreen()
     );
   
   }
